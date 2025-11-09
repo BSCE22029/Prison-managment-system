@@ -15,4 +15,5 @@ class LoginWindow(QMainWindow):
     def init_views(self):
         self.guard_dashboard = GuardDashboard()
         self.prisoner_dashboard = PrisonerDashboard()
-        # Add more initialization as needed
+       
+
