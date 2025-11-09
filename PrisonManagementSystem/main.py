@@ -220,26 +220,11 @@ class MainApp(QMainWindow):
         emergency_widget.setLayout(layout)
         self.stacked_widget.addWidget(emergency_widget)
 
-    def show_login_view(self):
-        self.stacked_widget.setCurrentIndex(0)
-
-    def show_guard_dashboard(self):
-        self.stacked_widget.setCurrentIndex(1)
-
-    def show_prisoner_dashboard(self):
-        self.stacked_widget.setCurrentIndex(2)
-
-    def show_visitor_dashboard(self):
-        self.stacked_widget.setCurrentIndex(3)
-
-    def show_admin_dashboard(self):
-        self.stacked_widget.setCurrentIndex(4)
-
-    def show_emergency_alert_view(self):
-        self.stacked_widget.setCurrentIndex(5)
+  
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     main_window = MainApp()
     main_window.show()
     sys.exit(app.exec_())
+
