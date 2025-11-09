@@ -220,11 +220,13 @@ class MainApp(QMainWindow):
         emergency_widget.setLayout(layout)
         self.stacked_widget.addWidget(emergency_widget)
 
-  
+  def show_login_view(self):
+        self.stacked_widget.setCurrentIndex(0)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     main_window = MainApp()
     main_window.show()
     sys.exit(app.exec_())
+
 
