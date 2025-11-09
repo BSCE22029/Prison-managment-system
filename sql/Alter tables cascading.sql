@@ -1,15 +1,12 @@
 -- admin
--- Drop existing foreign key
 ALTER TABLE Admins DROP CONSTRAINT admins_prision_id_fkey;
 
--- Add new foreign key with cascading deletes
 ALTER TABLE Admins
 ADD CONSTRAINT admins_prision_id_fkey
 FOREIGN KEY (prision_id) REFERENCES Prisions(prision_id) ON DELETE CASCADE;
 
 
 -- guard
--- Drop existing foreign key
 ALTER TABLE Guards DROP CONSTRAINT guards_prision_id_fkey;
 
 -- Add new foreign key with cascading deletes
@@ -84,4 +81,5 @@ ALTER TABLE Incident_Reports DROP CONSTRAINT incidentreports_prisoner_involved_i
 ALTER TABLE Incident_Reports
 ADD CONSTRAINT incidentreports_prisoner_involved_id_fkey
 FOREIGN KEY (prisoner_involved_id) REFERENCES Prisoner(prisoner_id) ON DELETE CASCADE;
+
 
