@@ -1,0 +1,4 @@
+sonar.organization=BSCE22029
+sonar.projectKey=BSCE22029_Prison-managment-system
+sonar.projectName=Prison-managment-system
+sonar.host.url=https://sonarcloud.io
