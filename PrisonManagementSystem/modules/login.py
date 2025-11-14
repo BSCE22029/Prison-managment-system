@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QMainWindow, QStackedWidget
 from modules.guard_dashboard import GuardDashboard
 from modules.prisoner_dashboard import PrisonerDashboard
 
-class LoginWindow(QMainWindow):
+class LoginWindow(QMainWindow):				#adding
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Prison Management System")
