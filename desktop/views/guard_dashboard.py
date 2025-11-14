@@ -6,7 +6,7 @@ from PyQt5.QtCore import Qt
 class GuardDashboard(QWidget):
     def __init__(self, show_login_view):
         super().__init__()
-        self.setLayout(self.create_layout(show_login_view))
+        self.setLayout(self.create_layout(show_login_view))   #testing for sonarCube
 
     def create_layout(self, show_login_view):
         layout = QVBoxLayout()
