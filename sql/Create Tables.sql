@@ -14,6 +14,46 @@ CREATE TABLE Prisions (
     prision_name VARCHAR NOT NULL,
     prision_location VARCHAR NOT NULL
 );
+CREATE TABLE cells (
+    cell_id INT PRIMARY KEY AUTO_INCREMENT,
+    block VARCHAR(10),
+    capacity INT NOT NULL,
+    occupied INT DEFAULT 0,
+    security_level VARCHAR(20) DEFAULT 'Medium'
+);
+
+-- 4. Visits Table
+CREATE TABLE visits (
+    visit_id INT PRIMARY KEY AUTO_INCREMENT,
+    prisoner_id INT NOT NULL,
+    visitor_name VARCHAR(100),
+    relationship VARCHAR(50),
+    visit_date DATE NOT NULL,
+    visit_time TIME,
+    FOREIGN KEY (prisoner_id) REFERENCES prisoners(prisoner_id)
+);
+CREATE TABLE incidents (
+    incident_id INT PRIMARY KEY AUTO_INCREMENT,
+    prisoner_id INT,
+    guard_id INT,
+    description TEXT,
+    incident_date DATE NOT NULL,
+    severity VARCHAR(20),
+    FOREIGN KEY (prisoner_id) REFERENCES prisoners(prisoner_id),
+    FOREIGN KEY (guard_id) REFERENCES guards(guard_id)
+);
+
+-- 6. Prisoner Work Assignments Table
+CREATE TABLE prisoner_work (
+    work_id INT PRIMARY KEY AUTO_INCREMENT,
+    prisoner_id INT NOT NULL,
+    work_area VARCHAR(50),
+    supervisor_id INT,
+    start_date DATE,
+    end_date DATE,
+    FOREIGN KEY (prisoner_id) REFERENCES prisoners(prisoner_id),
+    FOREIGN KEY (supervisor_id) REFERENCES guards(guard_id)
+);
 
 -- Table: Admins
 CREATE TABLE Admins (
@@ -99,3 +139,4 @@ CREATE TABLE Incident_Reports (
     resolution_date DATE,
     additional_notes TEXT
 );
+
